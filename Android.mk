@@ -59,4 +59,4 @@ LOCAL_SRC_FILES := $(clanglibs_path)/linux_translib/libclang_rt.translib32.a
 
 include $(BUILD_STATIC_LIBRARY)
 
-clanglibs_path :=
+clanglibs_path := 
