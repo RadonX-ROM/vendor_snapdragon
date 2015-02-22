@@ -1,4 +1,4 @@
-
+ifeq ($(USE_CLANG_QCOM),true)
 LOCAL_PATH := $(call my-dir)
 
 clanglibs_path := $(LOCAL_PATH)/../../prebuilts/clang/linux-x86/host/llvm-Snapdragon_LLVM_for_Android_3.5/prebuilt/linux-x86_64/lib/clang/3.5.0/lib/
@@ -59,4 +59,16 @@ LOCAL_SRC_FILES := $(clanglibs_path)/linux_translib/libclang_rt.translib32.a
 
 include $(BUILD_STATIC_LIBRARY)
 
+ifeq ($(USE_CLANG_QCOM_LTO),true)
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := libLTO
+LOCAL_MODULE_TAGS := optional
+LOCAL_SRC_FILES := $(clanglibs_path)/../../../libLTO.so
+
+include $(BUILD_SHARED_LIBRARY)
+endif
+
 clanglibs_path := 
+
+endif
