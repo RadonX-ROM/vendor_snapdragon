@@ -1,7 +1,7 @@
-ifeq ($(USE_CLANG_QCOM),true)
+ifeq ($TARGET_QCOM_CLANG),true)
 LOCAL_PATH := $(call my-dir)
 
-clanglibs_path := /../../prebuilts/clang/linux-x86/host/llvm-Snapdragon_LLVM_for_Android_3.6/prebuilt/linux-x86_64/lib/clang/3.6.0/lib/
+clanglibs_path := $(ANDROID_BUILD_TOP)/prebuilts/clang/linux-x86/host/3.6-qcom/lib/clang/3.6.0/lib
 
 #include $(CLEAR_VARS)
 #LOCAL_MODULE := libclang_rt.asan-arm-android
